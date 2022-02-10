@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Flight Details</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+  <style>
+  body{
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    height=10%;
+    }
+</style>
+</head>
+
+<body background="admin.jpg">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Flight Management System</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/flights}">Flight Management</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="row">
+    <h1>Flight Details</h1>
+  </div>
+  <div class="row">
+    <div class="col-lg-3">
+      <a th:href="@{/flights/new}" class="btn-primary btn-sm mb-3">Add Flight</a>
+    </div>
+
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead class="table-dark">
+    <tr>
+      <th> Flight Name</th>
+      <th> Flight Origin</th>
+      <th> Flight Destination</th>
+      <th> Flight Duration</th>
+      <th> Flight Date</th>
+      <th> Flight Time</th>
+      <th> Flight Type</th>
+      <th> Flight Number</th>
+      <th> Amount</th>
+      <th> Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="flight:${flights}">
+      <td th:text="${flight.name}"></td>
+      <td th:text="${flight.origin}"></td>
+      <td th:text="${flight.destination}"></td>
+      <td th:text="${flight.duration}"></td>
+      <td th:text="${flight.flightDate}"></td>
+      <td th:text="${flight.flightTime}"></td>
+      <td th:text="${flight.flightType}"></td>
+      <td th:text="${flight.flightNumber}"></td>
+      <td th:text="${flight.amount}"></td>
+
+
+      <td>
+        <a th:href="@{/flights/edit/{id}(id=${flight.id})}"
+           class="btn btn-primary">Update</a>
+
+        <a th:href="@{/flights/{id}(id=${flight.id})}"
+           class="btn btn-dangerS">Delete</a>
+
+
+      </td>
+
+
+
+    </tr>
+    </tbody>
+
+  </table>
+</div>
+
+
+</head>
+
+
+</body>
+</html>

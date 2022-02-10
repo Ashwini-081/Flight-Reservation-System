@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+  body{
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    height=10%;
+    }
+
+.navigation {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navigation a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navigation a:hover {
+  background-color: lightgrey;
+  color: black;
+}
+
+.navigation a.active {
+  background-color: green;
+  color: white;
+    </style>
+</head >
+<body background="home.jpg">
+<div class="navigation">
+  <a href="/">Home</a>
+  <a href="/logout" style="float:Right">Logout</a>
+
+  <a class="active" href="/login" style="float:right">Login</a>
+  <a href="/register" style="float:right">Register</a>
+</div>
+<center>
+  <h1>User Login</h1>
+</center>
+<h6 style="font-size:20px;color:red;text-align:center"><small><span th:text="${message}"></span></small></h6>
+<form  action="/userhomepage" method="post">
+  <center>
+    <div class="container" style="border:5px solid green;padding:50px;width:350px;background-color:lightgrey">
+      <label style="font-size:125%">Username:</label>&nbsp;
+      <input type="text" placeholder="Enter Username" name="userName" required><br/><br/>
+      <label style="font-size:125%">Password:</label>&nbsp;
+      <input type="password" placeholder="Enter Password" name="password" required><br/><br/>
+      <input type="checkbox" checked="checked">Remember me &nbsp;
+      <a href="#"> Forgot Password?</a><br/><br/>
+      <button type="submit">Login</button>
+      <button type="button" class="cancelButton" onclick="/">Cancel</button><br/><br/>
+      Don't Have an Account?<a href="/register">Register Here</a>
+    </div>
+  </center>
+</form>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Flight Management</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+  <style>
+  body{
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    height=10%;
+    }
+</style>
+</head>
+
+
+<body background="admin.jpg">
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Flight Management</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/flights}">Flight Management</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<div class ="container">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+      <h1 class="text-center">Create New flight</h1>
+      <div class="card-body">
+        <form th:action="@{/flights}" th:object="${flight}" method="POST">
+          <div class="form-group">
+            <label>Flight Name</label>
+            <input type="text"
+                   name="name"
+                   th:field="*{name}"
+                   class="form-control"
+                   placeholder="Enter Flight Name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Origin</label>
+            <input type="text"
+                   name="origin"
+                   th:field="*{origin}"
+                   class="form-control"
+                   placeholder="Enter Origin"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Destination</label>
+            <input type="text"
+                   name="destination"
+                   th:field="*{destination}"
+                   class="form-control"
+                   placeholder="Enter Destination"
+            />
+          </div>
+          <div class="form-group">
+            <label>Duration</label>
+            <input type="text"
+                   name="duration"
+                   th:field="*{duration}"
+                   class="form-control"
+                   placeholder="Enter Duration"
+            />
+          </div>
+          <div class="form-group">
+            <label>FlightDate</label>
+            <input type="text"
+                   name="flightDate"
+                   th:field="*{flightDate}"
+                   class="form-control"
+                   placeholder="Enter flightDate"
+            />
+          </div>
+
+
+          <div class="form-group">
+            <label>FlightTime</label>
+            <input type="text"
+                   name="flightTime"
+                   th:field="*{flightTime}"
+                   class="form-control"
+                   placeholder="Enter flightTime"
+            />
+          </div>
+          <div class="form-group">
+            <label>FlightType</label>
+            <input type="text"
+                   name="flightType"
+                   th:field="*{flightType}"
+                   class="form-control"
+                   placeholder="Enter flightType"
+            />
+          </div>
+          <div class="form-group">
+            <label>FlightNumber</label>
+            <input type="text"
+                   name="flightNumber"
+                   th:field="*{flightNumber}"
+                   class="form-control"
+                   placeholder="Enter flightNumber"
+            />
+          </div>
+          <div class="form-group">
+            <label>Amount</label>
+            <input type="text"
+                   name="amount"
+                   th:field="*{amount}"
+                   class="form-control"
+                   placeholder="Enter amount"
+            />
+          </div>
+
+          <div class="box-footer">
+            <button type="submit" class="btn btn-primary">
+              Submit
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<form th:action="@{/adminlogout}" method="post">-->
+<!--  <input type="submit" class="btn btn-info" value="Logout" />-->
+</form>
+
+</body>
+</html>
