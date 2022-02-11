@@ -1,89 +1,118 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org" >
+
 <head>
     <meta charset="UTF-8">
-    <title>Flight Management</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-          crossorigin="anonymous">
+    <title>Passenger Details</title>
+    <style>
+    .container{
+        width:40%;
+        border:1px solid black;
+        margin:auto;
+        padding:20px;
+        font-size=20px
+        }
+        #myform table tr td input{
+        font-size:20px
+        }
+        body{
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    height=10%;
+    }
+
+    .navigation {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navigation a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navigation a:hover {
+  background-color: lightgrey;
+  color: black;
+}
+
+.navigation a.active {
+  background-color: green;
+  color: white;
+
+
+    </style>
 </head>
-<body>
-<div class ="container">
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-            <h1 class="text-center">Enter Passanger Details</h1>
-            <div class="card-body">
-                <form th:action="@{/flights}" th:object="${flight}" method="POST">
-                    <div class="form-group">
-                        <label>Passenger Name</label>
-                        <input type="text"
-                               name="name"
-                               th:field="*{name}"
-                               class="form-control"
-                               placeholder="Enter Flight Name"
-                        />
-                    </div>
-
-                    <div class="form-group">
-                        <label>Origin</label>
-                        <input type="text"
-                               name="origin"
-                               th:field="*{origin}"
-                               class="form-control"
-                               placeholder="Enter Origin"
-                        />
-                    </div>
-
-                    <div class="form-group">
-                        <label>Destination</label>
-                        <input type="text"
-                               name="destination"
-                               th:field="*{destination}"
-                               class="form-control"
-                               placeholder="Enter Destination"
-                        />
-                        <div class="form-group">
-                            <label>FlightDate</label>
-                            <input type="text"
-                                   name="flightDate"
-                                   th:field="*{flightDate}"
-                                   class="form-control"
-                                   placeholder="Enter flightDate"
-                            />
-                        </div>
+<body background="home.jpg">
+<div class="navigation">
+    <a class="active" href="/" style="...">Home</a>
 
 
-                    <div class="form-group">
-                        <label>FlightTime</label>
-                        <input type="text"
-                               name="flightTime"
-                               th:field="*{flightTime}"
-                               class="form-control"
-                               placeholder="Enter flightTime"
-                        />
-                    </div>
-
-                    <div class="form-group">
-                        <label>FlightNumber</label>
-                        <input type="text"
-                               name="flightNumber"
-                               th:field="*{flightNumber}"
-                               class="form-control"
-                               placeholder="Enter flightNumber"
-                        />
-                    </div>
-
-                    <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">
-                            Submit
-                        </button>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
+    <a href="/logout" style="float:Right">Logout</a>
 </div>
+<div class="container">
+    <h1>Passenger Details</h1>
+    <form id="myform" action="Payment" method="post">
+        <table>
+            <tr>
+                <td>Enter Name:</td>
+                <td><input type="text" name="user_name" placeholder="Enter Here"/></td>
+
+            </tr>
+            <tr>
+
+                <td>Enter Email:</td>
+                <td><input type="email" name="email" placeholder="Enter Here"/></td>
+
+            </tr>
+            <tr>
+
+                <td>Enter phoneno:</td>
+                <td><input type="number" name="PhoneNumber" placeholder="Enter Here"/></td>
+            </tr>
+            <tr>
+                <td>Enter Age:</td>
+                <td><input type="number" name="Age" placeholder="Enter Here"/></td>
+
+            </tr>
+            <tr>
+                <td>Select Gender</td>
+                <td><input type="radio" name="user_gender" value="male">Male &nbsp; &nbsp;<input type="radio" name="user_gender",value="female">Female</td>
+            </tr>
+            <tr>
+            <td>Enter Amount:</td>
+            <td><input type="number" name="Amount" placeholder="Enter Here"/></td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+<!--                <td>-->
+<!--                    <a th:href="@{payment}" <button type="submit">Submit</button>-->
+<!--                <button type="submit">Cancel</button>-->
+<!--                </td>-->
+                <td>
+                    <a th:href="@{/payments}" class="btn-primary btn-sm mb-3">Submit</a>
+                    <a th:href="@{/login}" class="btn-primary btn-sm mb-3">Cancel</a>
+
+
+                </td>
+            </tr>
+
+
+
+
+
+
+        </table>
+    </form>
+</div>
+
 
 </body>
 </html>

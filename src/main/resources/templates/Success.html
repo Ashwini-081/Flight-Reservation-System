@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        body{
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    height=10%;
+    }
+    .navigation {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navigation a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navigation a:hover {
+  background-color: lightgrey;
+  color: black;
+}
+
+.navigation a.active {
+  background-color: green;
+  color: white;
+    </style>
+</head >
+<body background="home.jpg">
+
+<div class="navigation">
+    <a href="/">Home</a>
+    <a href="/logout" style="float:Right">Logout</a>
+</div>
+
+
+
+<h1>SuccessFully Booked Ticket</h1>
+
+<button onclick="typeWriter()">Cancel Ticket</button>
+
+<p id="demo"></p>
+
+<script>
+var i = 0;
+var txt = 'Your Ticket Is Successfully Cancelled';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+
+<tr>
+    <td>
+        <a th:href="@{/login}" class="btn-primary btn-sm mb-3">Logout</a>
+
+    </td>
+</tr>
+
+</body>
+</html>

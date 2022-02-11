@@ -16,9 +16,6 @@ public class Customer {
     private String password;
     @Column(unique = true)
     private String mobileNumber;
-//    @OneToMany(mappedBy = "customer")
-//    private List<BookedSeats> bookedSeats;
-
     public Customer() {
     }
 
@@ -30,13 +27,7 @@ public class Customer {
         this.mobileNumber=mobileNumber;
     }
 
-//    public List<BookedSeats> getBookedSeats() {
-//        return bookedSeats;
-//    }
-//
-//    public void setBookedSeats(List<BookedSeats> bookedSeats) {
-//        this.bookedSeats = bookedSeats;
-//    }
+
 
     public String getUserName() {
         return userName;

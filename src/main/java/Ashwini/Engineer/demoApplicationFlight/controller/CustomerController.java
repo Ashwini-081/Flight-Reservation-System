@@ -120,9 +120,39 @@ public class CustomerController {
         return "redirect:/userhomepage";
     }
 
-//    @GetMapping("/booking")
-//    public String booking(){
-//        return "booking";
-//    }
-
+    @GetMapping("/payments")
+    public String payment(){
+        return "payment";
     }
+
+    @GetMapping("/bookings")
+    public String booking(){
+        return "booking";
+    }
+
+    @GetMapping("/success")
+    public String success(){
+        return "Success";
+    }
+
+    @GetMapping("/logout")
+    public String logout(){
+        return "logout";
+    }
+
+
+
+
+
+
+
+
+//    @RequestMapping("/history")
+//    public String history(Model model) {
+//        User user = userService.getUserById(userId);
+//        List<History> histories = historyService.getHistoryByUserName(user.getUserName());
+//        model.addAttribute("histories", histories);
+//        return "history";
+    }
+
+
