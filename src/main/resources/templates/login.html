@@ -47,11 +47,11 @@
   <h1>User Login</h1>
 </center>
 <h6 style="font-size:20px;color:red;text-align:center"><small><span th:text="${message}"></span></small></h6>
-<form  action="/userhomepage" method="post">
+<form  action="/login" method="post">
   <center>
     <div class="container" style="border:5px solid green;padding:50px;width:350px;background-color:lightgrey">
       <label style="font-size:125%">Username:</label>&nbsp;
-      <input type="text" placeholder="Enter Username" name="userName" required><br/><br/>
+      <input type="text" placeholder="Enter Username" name="username" required><br/><br/>
       <label style="font-size:125%">Password:</label>&nbsp;
       <input type="password" placeholder="Enter Password" name="password" required><br/><br/>
       <input type="checkbox" checked="checked">Remember me &nbsp;

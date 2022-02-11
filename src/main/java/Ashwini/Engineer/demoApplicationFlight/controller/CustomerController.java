@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.security.Principal;
 import java.util.Objects;
 
 @Controller
@@ -37,7 +38,7 @@ public class CustomerController {
         return "register";
     }
 
-    @PostMapping("/login")
+    @PostMapping("/register")
     public String registration(HttpServletRequest request) {
         String userName = request.getParameter("userName");
         String name = request.getParameter("name");
@@ -46,7 +47,7 @@ public class CustomerController {
         String mobileNumber = request.getParameter("mobileNumber");
         Customer customer = new Customer(userName, name, email, password, mobileNumber);
         customerService.createCustomer(customer);
-        return "login";
+        return "redirect:/login";
     }
 
     //Login - after login user will go to the list of movies page
@@ -135,11 +136,18 @@ public class CustomerController {
         return "Success";
     }
 
-    @GetMapping("/logout")
-    public String logout(){
-        return "logout";
-    }
+//    @GetMapping("/logout")
+//    public String logout(){
+//        return "logout";
+//    }
+//
 
+    @GetMapping("/loginSuccess")
+    public String loginsuccess(Principal principal){
+        if(principal.getName().equals("Admin"))
+            return "redirect:/flights";
+        return "redirect:/userhomepage";
+    }
 
 
 

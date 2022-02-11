@@ -18,6 +18,9 @@ public class CustomerService {
         return customerRepository.existsById(userName);
     }
     public Customer findCustomerByUserName(String userName){
+        if(!existsById(userName)) return null;
         return customerRepository.getById(userName);
     }
+
+
 }

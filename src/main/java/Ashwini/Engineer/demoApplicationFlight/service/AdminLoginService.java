@@ -15,5 +15,8 @@ public class AdminLoginService {
         AdminLogin user = repo.findByUsernameAndPassword(username, password);
         return user;
     }
+    public AdminLogin findByUsername(String username){
+        return repo.findByUsername(username);
+    }
 
 }
