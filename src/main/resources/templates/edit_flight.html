@@ -20,7 +20,11 @@
 
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <!-- Brand -->
-    <a class="navbar-brand" href="#">Flight Management</a>
+<!--    <a class="navbar-brand" href="#">Flight Management</a>-->
+    <a class="navbar-brand" href="#">Flight Management System</a>
+    <a class="nav-link" th:href="@{/login}" style="float:Right">Logout</a>
+
+
 
     <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -51,6 +55,7 @@
                                th:field="*{name}"
                                class="form-control"
                                placeholder="Enter Flight Name"
+                               required
                         />
                     </div>
 
@@ -61,6 +66,7 @@
                                th:field="*{origin}"
                                class="form-control"
                                placeholder="Enter Origin"
+                               required
                         />
                     </div>
 
@@ -71,6 +77,7 @@
                                th:field="*{destination}"
                                class="form-control"
                                placeholder="Enter Destination"
+                               required
                         />
                     </div>
                     <div class="form-group">
@@ -80,6 +87,7 @@
                                th:field="*{duration}"
                                class="form-control"
                                placeholder="Enter Duration"
+                               required
                         />
                     </div>
                     <div class="form-group">
@@ -89,6 +97,7 @@
                                th:field="*{flightDate}"
                                class="form-control"
                                placeholder="Enter flightDate"
+                               required
                         />
                     </div>
 
@@ -99,6 +108,7 @@
                                th:field="*{flightTime}"
                                class="form-control"
                                placeholder="Enter flightTime"
+                               required
                         />
                     </div>
                     <div class="form-group">
@@ -108,6 +118,7 @@
                                th:field="*{flightType}"
                                class="form-control"
                                placeholder="Enter flightType"
+                               required
                         />
                     </div>
                     <div class="form-group">
@@ -117,6 +128,7 @@
                                th:field="*{flightNumber}"
                                class="form-control"
                                placeholder="Enter flightNumber"
+                               required
                         />
                     </div>
 
@@ -128,6 +140,7 @@
                        th:field="*{amount}"
                        class="form-control"
                        placeholder="Enter amount"
+                       required
                 />
             </div>
 

@@ -1,8 +1,11 @@
 package Ashwini.Engineer.demoApplicationFlight.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Passanger {
@@ -11,20 +14,30 @@ public class Passanger {
     private long id;
     private String name;
     private String email;
-    private long pno;
-    private int age;
+    private String pno;
+    private String age;
     private String gender;
 
-    public Passanger(long id, String name, String email, long pno, int age, String gender) {
-        this.id = id;
+//    @JsonIgnore
+//    @ManyToOne
+//    private Flight_Details flight_details;
+//    @ManyToOne
+//    private Customer customer;
+//
+
+
+    public Passanger( String name, String email, String pno, String age, String gender) {
+
         this.name = name;
         this.email = email;
         this.pno = pno;
         this.age = age;
         this.gender = gender;
     }
-
     public Passanger(){}
+
+    public Passanger(String name, String email, String pno, String gender) {
+    }
 
     public long getId() {
         return id;
@@ -50,19 +63,19 @@ public class Passanger {
         this.email = email;
     }
 
-    public long getPno() {
+    public String getPno() {
         return pno;
     }
 
-    public void setPno(long pno) {
+    public void setPno(String pno) {
         this.pno = pno;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 

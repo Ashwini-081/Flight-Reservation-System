@@ -3,6 +3,7 @@ package Ashwini.Engineer.demoApplicationFlight;
 import Ashwini.Engineer.demoApplicationFlight.service.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -23,8 +24,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().authorizeRequests()
-                .antMatchers("/flights/new").hasRole("ADMIN")
-                .antMatchers("/userhomepage").hasAnyRole("ADMIN","USER")
+                .antMatchers("/flights","/flights/new","/flights/edit/{id}").hasRole("ADMIN")
+                .antMatchers("/userhomepage","/bookings","/payments","/success").hasAnyRole("ADMIN","USER")
+                .antMatchers(HttpMethod.POST,"/payments").hasAnyRole("ADMIN","USER")
                 .antMatchers("/").permitAll()
                 .and().formLogin().loginPage("/login").defaultSuccessUrl("/loginSuccess");
     }
