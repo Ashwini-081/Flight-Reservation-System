@@ -2,10 +2,7 @@ package Ashwini.Engineer.demoApplicationFlight.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Passanger {
@@ -14,16 +11,12 @@ public class Passanger {
     private long id;
     private String name;
     private String email;
+    @Column(length = 10)
     private String pno;
+    @Column(length = 2)
     private String age;
     private String gender;
 
-//    @JsonIgnore
-//    @ManyToOne
-//    private Flight_Details flight_details;
-//    @ManyToOne
-//    private Customer customer;
-//
 
 
     public Passanger( String name, String email, String pno, String age, String gender) {

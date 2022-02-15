@@ -58,6 +58,7 @@
                 <div class="box">
                     <span>card holder</span>
                     <div class="card-holder-name">full name</div>
+                    required
                 </div>
                 <div class="box">
                     <span>expires</span>
@@ -80,14 +81,14 @@
 
     </div>
 
-    <form action="">
+    <form action="/payments" method="post">
         <div class="inputBox">
             <span>card number</span>
-            <input type="text" maxlength="16" class="card-number-input">
+            <input type="text" maxlength="10" name="cardnumber" class="card-number-input">
         </div>
         <div class="inputBox">
             <span>card holder</span>
-            <input type="text" class="card-holder-input">
+            <input type="text" name="cardholder" class="card-holder-input">
         </div>
         <div class="flexbox">
             <div class="inputBox">
@@ -129,7 +130,11 @@
                 <input type="text" maxlength="4" class="cvv-input">
             </div>
         </div>
-        <a th:href="@{/success}" class="btn-primary btn-sm mb-3">Pay</a>
+<!--        <a th:href="@{/success}" class="btn-primary btn-sm mb-3">Pay</a>-->
+<!--        <a th:href="@{/success}"></a><button type="submit">Pay</button>-->
+        <input type="submit" value="submit" class="submit-btn">
+
+
 
     </form>
 
@@ -178,6 +183,7 @@ document.querySelector('.cvv-input').oninput = () =>{
 
 
 <!--<a th:href="@{/success}" class="btn-primary btn-sm mb-3">Pay</a>-->
+
 
 
 </body>

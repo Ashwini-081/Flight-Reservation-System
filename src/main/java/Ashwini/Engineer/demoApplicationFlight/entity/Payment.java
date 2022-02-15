@@ -9,16 +9,17 @@ public class Payment {
     @Id
     @Column(name = "id", nullable = false)
     private Long id;
-
-    private static String cardnumber;
+    @Column(length = 10)
+    private static Long cardnumber;
     private static String cardholder;
     private static String expirationmm;
     private static String expirationyy;
+    @Column(length =4 )
     private static String cvv;
 
     public Payment(){}
 
-    public Payment(String cardnumber, String cardholder, String expirationmm, String expirationyy, String cvv) {
+    public Payment(Long cardnumber, String cardholder, String expirationmm, String expirationyy, String cvv) {
         this.cardnumber = cardnumber;
         this.cardholder = cardholder;
         this.expirationmm = expirationmm;
@@ -34,11 +35,11 @@ public class Payment {
         this.id = id;
     }
 
-    public String getCardnumber() {
+    public Long getCardnumber() {
         return cardnumber;
     }
 
-    public void setCardnumber(String cardnumber) {
+    public void setCardnumber(Long cardnumber) {
         this.cardnumber = cardnumber;
     }
 

@@ -49,7 +49,7 @@
   <center>
     <div class="container" style="border:5px solid green;padding:50px;width:350px;background-color:lightgrey">
       <label style="font-size:125%">Username:</label>&nbsp;
-      <input type="text" placeholder="Enter Username" name="userName" required><br/><br/>
+      <input type="text" placeholder="Enter Username" name="username" required><br/><br/>
       <label style="font-size:125%">Name:</label>&nbsp;
       <input type="text" placeholder="Enter Name" name="name" required><br/><br/>
       <label style="font-size:125%">Password:</label>&nbsp;
@@ -64,6 +64,15 @@
       <button type="button" class="cancelButton" onclick="/">Cancel</button><br/><br/>
       Have an Account?<a href="/login">Login Here</a>
     </div>
+<!--    <span th:utext="${successMessage}"></span>-->
+<!--    <div class="alert alert-success alert-dismissible col-sm-12"-->
+<!--    th:if="${(bindingResult!=null &&bindingResult.getAllErrors() !=null)}">-->
+<!--      <button type="button" class="close" data-dismiss="alert"-->
+<!--              aria-hidden="true"></button>-->
+<!--      <ul th:each="data:${bindingResult.getAllErrors()}">-->
+<!--        <li th:text="data.getObjectName()+'::'+data.getDefaultMessage()}"></li>-->
+<!--      </ul>-->
+<!--    </div>-->
   </center>
 </form>
 </body>

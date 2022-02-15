@@ -51,6 +51,15 @@ public class Flight_DetailsServiceImpl implements Flight_DetailsService {
 
     }
 
+//    @Override
+//    public Flight_Details findById(Integer id) {
+//        return flight_detailsRepository.findById(id);
+//    }
+    @Override
+    public Flight_Details findById(Integer id) {
+        return flight_detailsRepository.getById(id);
+    }
+
 
 }
 
