@@ -16,7 +16,7 @@
 </style>
 </head>
 
-<body background="img.jpg">
+<body style="background-color:#1c87c9;">
 
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <!-- Brand -->
@@ -50,7 +50,7 @@
                 <form th:action="@{/flights/{id} (id=${flight.id})}" th:object="${flight}" method="POST">
                     <div class="form-group">
                         <label>Flight Name</label>
-                        <input type="text"
+                        <nput type="text"
                                name="name"
                                th:field="*{name}"
                                class="form-control"
