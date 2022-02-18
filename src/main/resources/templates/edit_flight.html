@@ -128,6 +128,7 @@
                                th:field="*{flightNumber}"
                                class="form-control"
                                placeholder="Enter flightNumber"
+                               pattern="^\d{2}$"
                                required
                         />
                     </div>
@@ -140,6 +141,7 @@
                        th:field="*{amount}"
                        class="form-control"
                        placeholder="Enter amount"
+                       pattern="^\d{4}$"
                        required
                 />
             </div>

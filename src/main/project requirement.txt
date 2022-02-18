@@ -1,0 +1,20 @@
+Final Project Requirements
+
+should have:
+-> authentication: sign-up, sign-in, sign-out (with cookies/session/tokens)
+-> roles: at least 2 roles (user and admin)
+-> should implement spring security
+-> should use database (should use relations)
+-> production ready UI (UI should be well made)
+-> tests should be written for business logic and custom database functions
+
+
+bonus points for:
+-> using micro-services architecture
+-> using AOP
+
+
+other things to consider:
+-> best practices (naming, API, DRY, …)
+-> GIT (always push it to GitHub when a modular work is done and also push at EOD)
+-> Try using concepts like inheritance, polymorphism, interface, collections, etc when necessary
